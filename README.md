@@ -12,6 +12,15 @@
 
 - The point of execution
 - three parameters that 'makeup' the starting position:
-  1. offset
-  2. triggerElement
-  3. triggerHook
+
+  1. <ins>offset</ins> : Offsets trigger point by specified distance
+  2. <ins>triggerElement</ins> : a selector, DOM object or jQuery Object that defines the start of the scene
+  3. <ins>triggerHook</ins> : postition of trigger, in realation to the viewport (values: [0.0 - 1.0] / ['onLeave', 'onCenter', 'onEnter'])
+
+```
+var scene = new ScrollMagic.Scene({
+  triggerElement: '#scroll-trigger',
+  offset: '50px',
+  tiggerHook: '.5'
+});
+```
