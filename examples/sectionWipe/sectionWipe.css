@@ -1,0 +1,40 @@
+section.panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20rem;
+  border: 2px solid black;
+  height: 100vh;
+}
+
+.red {
+  background-color: rgb(255, 125, 125);
+}
+
+.blue {
+  background-color: rgb(99, 99, 255);
+}
+
+.green {
+  background-color: rgb(87, 164, 87);
+}
+
+.yellow {
+  background-color: rgb(255, 255, 128);
+}
+
+.black {
+  background-color: rgb(116, 116, 116);
+}
+
+/* hidden content */
+
+.content {
+  opacity: 0;
+  transition: all 1s ease-in-out;
+}
+
+.visible {
+  opacity: 1;
+}
