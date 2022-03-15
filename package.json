@@ -1,0 +1,20 @@
+{
+  "name": "scroll_magic_learning",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "git": "git add . && git commit && git push origin $(git rev-parse --abbrev-ref HEAD) && echo '\n' && echo $(tput setaf 2)'committed: ' $(tput setaf 1)$(date) && echo '\n'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maryPopplns/scroll_magic_learning.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maryPopplns/scroll_magic_learning/issues"
+  },
+  "homepage": "https://github.com/maryPopplns/scroll_magic_learning#readme"
+}
