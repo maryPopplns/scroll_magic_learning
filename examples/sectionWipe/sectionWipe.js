@@ -22,17 +22,33 @@ for (let i = 0; i < slides.length; i++) {
 
 // const secondController = new ScrollMagic.Controller();
 
-(function sectionWipe() {
+(function reveal() {
   const content = Array.from(document.getElementsByClassName('content'));
   for (let i = 0; i < content.length; i++) {
     const offsetHeight = content[i].offsetHeight / 2;
     new ScrollMagic.Scene({
       triggerElement: `#${content[i].id}`,
-      triggerHook: 0.5, // show, when scrolled 10% into view
+      triggerHook: 0.5,
       offset: offsetHeight,
     })
-      .setClassToggle(`#${content[i].id}`, 'visible') // add class to reveal
-      .addIndicators() // add indicators (requires plugin)
-      .addTo(secondController);
+      .setClassToggle(`#${content[i].id}`, 'visible')
+      .addIndicators()
+      .addTo(secondController); // controller need to be intialized before the body
   }
+})();
+
+(function swordAnimation() {
+  const controller1 = new ScrollMagic.Controller();
+
+  const blockTween = new TweenMax.to('#sword_image', 0.75, {
+    transform: 'translateX(200vw)',
+  });
+
+  const containerScene = new ScrollMagic.Scene({
+    triggerElement: '.blue',
+    triggerHook: 'onLeave',
+  })
+    .setTween(blockTween)
+    .addIndicators()
+    .addTo(controller1);
 })();
