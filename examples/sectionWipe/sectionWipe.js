@@ -42,6 +42,7 @@ for (let i = 0; i < slides.length; i++) {
 
   const blockTween = new TweenMax.to('#sword_image', 0.75, {
     transform: 'translateX(200vw)',
+    display: 'none',
   });
 
   const containerScene = new ScrollMagic.Scene({
