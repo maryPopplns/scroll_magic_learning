@@ -46,10 +46,24 @@ section.panel {
   position: relative;
 }
 
-img {
-  position: absolute;
-  top: 0;
-  right: 100vw;
-  width: 100vw;
-  height: auto;
+#first,
+#second,
+#third {
+  width: 10rem;
+  height: 10rem;
+  border: 1px solid black;
+  position: relative;
+  display: none;
+}
+
+#first {
+  right: 55vw;
+}
+
+#second {
+  left: 55vw;
+}
+
+#third {
+  top: 55vh;
 }

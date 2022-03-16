@@ -20,8 +20,6 @@ for (let i = 0; i < slides.length; i++) {
     .addTo(controller);
 }
 
-// const secondController = new ScrollMagic.Controller();
-
 (function reveal() {
   const content = Array.from(document.getElementsByClassName('content'));
   for (let i = 0; i < content.length; i++) {
@@ -40,16 +38,28 @@ for (let i = 0; i < slides.length; i++) {
 (function swordAnimation() {
   const controller1 = new ScrollMagic.Controller();
 
-  const blockTween = new TweenMax.to('#sword_image', 0.75, {
-    transform: 'translateX(200vw)',
-    display: 'none',
-  });
+  // create multiple elements and try to get them to snap into position
 
-  const containerScene = new ScrollMagic.Scene({
-    triggerElement: '.blue',
-    triggerHook: 'onLeave',
-  })
-    .setTween(blockTween)
-    .addIndicators()
-    .addTo(controller1);
+  const firstBlock = new TweenMax.to('#first', 0.75, {
+    transform: 'translateX(55vw)',
+    display: 'block',
+  });
+  const secondBlock = new TweenMax.to('#second', 0.75, {
+    transform: 'translateX(-55vw)',
+    display: 'block',
+  });
+  const thirdBlock = new TweenMax.to('#third', 0.75, {
+    transform: 'translateY(-55vh)',
+    display: 'block',
+  });
+  const blocks = [firstBlock, secondBlock, thirdBlock];
+  for (let i = 0; i < blocks.length; i++) {
+    const containerScene = new ScrollMagic.Scene({
+      triggerElement: '.blue',
+      triggerHook: 'onLeave',
+    })
+      .setTween(blocks[i])
+      .addIndicators()
+      .addTo(controller1);
+  }
 })();
